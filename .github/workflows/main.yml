@@ -6,6 +6,7 @@ on:
     branches: [master, main]
 jobs:
   lint_js:
+      if: github.ref != 'refs/heads/skip-lint'  # Skip linting for 'skip-lint' branch
       name: Lint JavaScript Files
       runs-on: ubuntu-latest
       steps:
